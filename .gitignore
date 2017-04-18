@@ -1,2 +1,5 @@
 .idea
 data*
+/*-data*
+*.zip
+.floyd*
