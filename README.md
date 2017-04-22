@@ -10,6 +10,11 @@ While driving a car in a simulator is certainly not the same as driving a car in
 
 Of course the simulator also affords safety and ease-of-use. Data collection is much simpler, and a failed model poses no threat to life. A simulator is a great platform in which to explore and hone various model architectures. A successful model might afterwards be implemented in a real car with real cameras.
 
+Here are links to the simulator, if you want to experiement with that part of the code:
+ * [Mac](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/58ae4594_mac-sim.app/mac-sim.app.zip)
+ * [Linux](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/58ae46bb_linux-sim/linux-sim.zip)
+ * [Windows](https://d17h27t6h515a5.cloudfront.net/topher/2017/February/58ae4419_windows-sim/windows-sim.zip)
+
 ## Training Data and Behavioral Cloning
 
 The the goal of behavioral cloning is to collect data while exhibiting good behavior and then train a model to mimic that behavior with the collected data. Images are captured in the simulator as the car drives around the track. The captured images are fed into a neural network to teach the model how to drive properly. Here’s an example image captured from the front-center of the car:
