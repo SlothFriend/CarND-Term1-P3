@@ -14,7 +14,7 @@ Of course the simulator also affords safety and ease-of-use. Data collection is 
 
 The the goal of behavioral cloning is to collect data while exhibiting good behavior and then train a model to mimic that behavior with the collected data. Images are captured in the simulator as the car drives around the track. The captured images are fed into a neural network to teach the model how to drive properly. Here’s an example image captured from the front-center of the car:
 
-IMAGE HERE
+![Track One](https://github.com/SealedSaint/CarND-Term1-P3/blob/master/track-1-example.jpg)
 
 Each image is captured with the accompanying steering angle. The images are be fed into the network, and the network’s job is to match the appropriate steering angle. Since tracks normally have a turn bias (in this case, left), when the images are loaded each image gets a copy that has been flipped horizontally with steering angle negated. Both the original image and the flipped copy are fed into the network, balancing out the turn bias.
 
@@ -22,7 +22,7 @@ I collected data for a few different scenarios. First, I drove the track in both
 
 Here’s an image from the second, harder track:
 
-IMAGE HERE
+![Track Two](https://github.com/SealedSaint/CarND-Term1-P3/blob/master/track-2-example.jpg)
    
 ## Model Architecture
 
@@ -30,36 +30,22 @@ The model architecture I chose is nearly identical to NVIDIA’s network for End
 
 The layers and details of the network are laid out in-order in the table below:
 
-Layer
-  Description
- Input
-    Pass in the 320x160 RGB images
-     Cropping
- Remove the top 60 pixels (just sky and landscape) and bottom 25 pixels (car hood and solid road). This information isn’t useful for determining steering angles, and the less information we pass through the network the faster it will be.
-     Normalization
-   Pixel values [0, 255] are scaled down to [-0.5, 0.5].
-     Convolution
-   24 features, 5x5 filters, stride of 2
-     Convolution
-   36 features, 5x5 filters, stride of 2
-     Convolution
-   48 features, 5x5 filters, stride of 2
-     Convolution
-   64 features, 3x3 filters, stride of 1
- Convolution
-    64 features, 3x3 filters, stride of 1
-     Flatten
- Flatten the space down to one dimension for the fully-connected layers.
-     Fully-Connected
-   1162 values from linear combinations of previous values
-     Fully-Connected
-   100 values from linear combinations of previous values
-     Fully-Connected
-   50 values from linear combinations of previous values
-     Fully-Connected
-   10 values from linear combinations of previous values
- Output
-   1 steering angle from linear combinations of previous values
+Layer | Description
+:--- | :---
+Input | Pass in the 320x160 RGB images
+Cropping | Remove the top 60 pixels (just sky and landscape) and bottom 25 pixels (car hood and solid road). This information isn’t useful for determining steering angles, and the less information we pass through the network the faster it will be.
+Normalization | Pixel values [0, 255] are scaled down to [-0.5, 0.5].
+Convolution | 24 features, 5x5 filters, stride of 2
+Convolution | 36 features, 5x5 filters, stride of 2
+Convolution | 48 features, 5x5 filters, stride of 2
+Convolution | 64 features, 3x3 filters, stride of 1
+Convolution | 64 features, 3x3 filters, stride of 1
+Flatten | Flatten the space down to one dimension for the fully-connected layers.
+Fully-Connected | 1162 values from linear combinations of previous values
+Fully-Connected | 100 values from linear combinations of previous values
+Fully-Connected | 50 values from linear combinations of previous values
+Fully-Connected | 10 values from linear combinations of previous values
+Output | 1 steering angle from linear combinations of previous values
  
 Each convolutional layer and fully-connected layer has ELU activation, and a dropout layer with 30% drop-rate is implemented after each convolutional layer to help prevent overfitting in this large network.
 
