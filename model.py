@@ -5,6 +5,7 @@ from sklearn.utils import shuffle
 from sklearn.model_selection import train_test_split
 
 
+# Function that loads and returns the data and labels
 def get_data():
     folders = [
         'forwards-lap-data',
@@ -44,11 +45,13 @@ def get_data():
     return np.array(images), np.array(angles)
 
 
+# Collect the data
 data, labels = get_data()
 
 from keras.models import Sequential
 from keras.layers import Conv2D, Cropping2D, Dense, Dropout, Flatten, Lambda, MaxPooling2D
 
+# Build the model
 batch = 128
 epochs = 7
 activation_type = 'elu'
