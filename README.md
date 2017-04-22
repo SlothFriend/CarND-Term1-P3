@@ -1,118 +1,66 @@
-# Behaviorial Cloning Project
+# End-to-End Self-Driving Car Using Behavioral Cloning
 
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-Overview
----
-This repository contains starting files for the Behavioral Cloning Project.
+## Overview
 
-In this project, you will use what you've learned about deep neural networks and convolutional neural networks to clone driving behavior. You will train, validate and test a model using Keras. The model will output a steering angle to an autonomous vehicle.
-
-We have provided a simulator where you can steer a car around a track for data collection. You'll use image data and steering angles to train a neural network and then use this model to drive the car autonomously around the track.
-
-We also want you to create a detailed writeup of the project. Check out the [writeup template](https://github.com/udacity/CarND-Behavioral-Cloning-P3/blob/master/writeup_template.md) for this project and use it as a starting point for creating your own writeup. The writeup can be either a markdown file or a pdf document.
-
-To meet specifications, the project will require submitting five files: 
-* model.py (script used to create and train the model)
-* drive.py (script to drive the car - feel free to modify this file)
-* model.h5 (a trained Keras model)
-* a report writeup file (either markdown or pdf)
-* video.mp4 (a video recording of your vehicle driving autonomously around the track for at least one full lap)
-
-This README file describes how to output the video in the "Details About Files In This Directory" section.
-
-Creating a Great Writeup
----
-A great writeup should include the [rubric points](https://review.udacity.com/#!/rubrics/432/view) as well as your description of how you addressed each point.  You should include a detailed description of the code used (with line-number references and code snippets where necessary), and links to other supporting documents or external references.  You should include images in your writeup to demonstrate how your code works with examples.  
-
-All that said, please be concise!  We're not looking for you to write a book here, just a brief description of how you passed each rubric point, and references to the relevant code :). 
-
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup.
-
-The Project
----
-The goals / steps of this project are the following:
-* Use the simulator to collect data of good driving behavior 
-* Design, train and validate a model that predicts a steering angle from image data
-* Use the model to drive the vehicle autonomously around the first track in the simulator. The vehicle should remain on the road for an entire loop around the track.
-* Summarize the results with a written report
-
-### Dependencies
-This lab requires:
-
-* [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit)
-
-The lab enviroment can be created with CarND Term1 Starter Kit. Click [here](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) for the details.
-
-The following resources can be found in this github repository:
-* drive.py
-* video.py
-* writeup_template.md
-
-The simulator can be downloaded from the classroom. In the classroom, we have also provided sample data that you can optionally use to help train your model.
-
-## Details About Files In This Directory
-
-### `drive.py`
-
-Usage of `drive.py` requires you have saved the trained model as an h5 file, i.e. `model.h5`. See the [Keras documentation](https://keras.io/getting-started/faq/#how-can-i-save-a-keras-model) for how to create this file using the following command:
-```sh
-model.save(filepath)
-```
-
-Once the model has been saved, it can be used with drive.py using this command:
-
-```sh
-python drive.py model.h5
-```
-
-The above command will load the trained model and use the model to make predictions on individual images in real-time and send the predicted angle back to the server via a websocket connection.
-
-Note: There is known local system's setting issue with replacing "," with "." when using drive.py. When this happens it can make predicted steering values clipped to max/min values. If this occurs, a known fix for this is to add "export LANG=en_US.utf8" to the bashrc file.
-
-#### Saving a video of the autonomous agent
-
-```sh
-python drive.py model.h5 run1
-```
-
-The fourth argument `run1` is the directory to save the images seen by the agent to. If the directory already exists it'll be overwritten.
-
-```sh
-ls run1
-
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_424.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_451.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_477.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_528.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_573.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_618.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_697.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_723.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_749.jpg
-[2017-01-09 16:10:23 EST]  12KiB 2017_01_09_21_10_23_817.jpg
-...
-```
-
-The image file name is a timestamp when the image image was seen. This information is used by `video.py` to create a chronological video of the agent driving.
-
-### `video.py`
-
-```sh
-python video.py run1
-```
-
-Create a video based on images found in the `run1` directory. The name of the video will be name of the directory following by `'.mp4'`, so, in this case the video will be `run1.mp4`.
-
-Optionally one can specify the FPS (frames per second) of the video:
-
-```sh
-python video.py run1 --fps 48
-```
-
-The video will run at 48 FPS. The default FPS is 60.
-
-#### Why create a video
-
-1. It's been noted the simulator might perform differently based on the hardware. So if your model drives succesfully on your machine it might not on another machine (your reviewer). Saving a video is a solid backup in case this happens.
-2. You could slightly alter the code in `drive.py` and/or `video.py` to create a video of what your model sees after the image is processed (may be helpful for debugging).
+Project #3 involves using behavioral cloning and deep neural networks to teach a car to drive in a simulator
+My code for this project is publicly available and can be found here:
+https://github.com/SealedSaint/CarND-Term1-P3
+Why a Simulator
+While driving a car in a simulator is certainly not the same as driving a car in the real world, there are many similarities. Given the current state of game graphics, images captured in a simulated environment (road, markers, landscape) are a good approximation of images that could be captured in the real world.
+Of course the simulator also affords safety and ease-of-use. Data collection is much simpler, and a failed model poses no threat to life. A simulator is a great platform in which to explore and hone various model architectures. A successful model might afterwards be implemented in a real car with real cameras.
+Training Data and Behavioral Cloning
+The the goal of behavioral cloning is to collect data while exhibiting good behavior and then train a model to mimic that behavior with the collected data. While in a real-world setting this would involved mounting sensors on a car and driving around, in a simulator it looks more like this:
+    
+ David Clark 4/21/2017
+Yep, that’s right. Playing video games can help you build a self-driving car! The simulator is built in Unity, a game engine, and in-game cameras capture images as the car drives around the track. The images that were captured while I was driving (hopefully well) were later fed into a neural network to teach the model how to drive properly. Here’s an example image captured from the front-center of the car:
+  
+ David Clark 4/21/2017
+Each image is captured with the accompanying steering angle. The images will be fed into the network, and the network’s job will be to match the appropriate steering angle. Since tracks normally have a turn bias (in this case, left), when the images are loaded each image gets a copy that has been flipped horizontally with steering angle negated. Both the original image and the flipped copy are fed into the network, balancing out the turn bias.
+I collected data for a few different scenarios. First, I drove the track in both directions a couple of times while trying to maintain ideal center-lane driving. This scenario represented the bulk of the data as it is the ideal behavior. Second, I collected some “corrective” data by driving from the edge of the road back to the center in a variety of situations. The goal of the “corrective” data is to teach the car how to get back to the center if it gets out of line. Third, I collected more data specifically for the corners and problem spots - where the car had the most trouble staying on the track. Fourth and finally, I collected data on the second available track in the simulator. This second track is quite different (both the road and the landscape) and much more difficult. It exhibits steep slopes and much sharper, more frequent turns. The goal of collecting data on this quite different track was to help the model generalize a concept of “staying on the road.”
+Here’s an image from the second, harder track:
+   
+ David Clark 4/21/2017
+Model Architecture
+The model architecture I chose is nearly identical to NVIDIA’s network for End-to-End
+Learning for Self Driving Cars (paper  here ).
+The layers and details of the network are laid out in-order in the table below:
+       Layer
+  Description
+ Input
+    Pass in the 320x160 RGB images
+     Cropping
+ Remove the top 60 pixels (just sky and landscape) and bottom 25 pixels (car hood and solid road). This information isn’t useful for determining steering angles, and the less information we pass through the network the faster it will be.
+     Normalization
+   Pixel values [0, 255] are scaled down to [-0.5, 0.5].
+     Convolution
+   24 features, 5x5 filters, stride of 2
+     Convolution
+   36 features, 5x5 filters, stride of 2
+     Convolution
+   48 features, 5x5 filters, stride of 2
+     Convolution
+   64 features, 3x3 filters, stride of 1
+ Convolution
+    64 features, 3x3 filters, stride of 1
+     Flatten
+ Flatten the space down to one dimension for the fully-connected layers.
+     Fully-Connected
+   1162 values from linear combinations of previous values
+     Fully-Connected
+   100 values from linear combinations of previous values
+     Fully-Connected
+   50 values from linear combinations of previous values
+     Fully-Connected
+   10 values from linear combinations of previous values
+ Output
+   1 steering angle from linear combinations of previous values
+ 
+David Clark 4/21/2017
+Each convolutional layer and fully-connected layer has ELU activation, and a dropout layer with 30% drop-rate is implemented after each convolutional layer to help prevent overfitting in this large network.
+The convolutional layers capture abstracted features from the images. These abstracted features are fed into the fully-connected layers which serve as a steering controller. More on the model’s design can be read in NVIDIA’s paper  here .
+Training the Model
+Keras was used to build and train the model, which provided quick and simple implementation. The Adam optimizer was used, and the mean-squared-error was minimized. The model was trained in randomly-selected batches of 128 images for seven epochs, and 20% of the data was reserved for validation. In total, the model was trained using around 25,000 images.
+The Results
+After training, the car driven by the model was able to correctly traverse the first track. The car exhibited minimal over-correcting on the straight-aways, and it had a couple close calls with the edge of the road and the bridge. Overall, it performed well on the first track. As for the second track, it was unable to go much of anywhere, but this is not too surprising considering the majority of the data was gathered on the simpler track. I believe this model architecture  could  handle driving on the second track if I were to provide it with more data (especially at problem-spots) from the second track.
