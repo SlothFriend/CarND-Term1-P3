@@ -4,6 +4,8 @@
 
 This is project #3 in the Udacity Self-Driving Car program, and it involves using behavioral cloning and deep neural networks to teach a car to drive in a simulator.
 
+A slightly less technical Medium write-up for this project can be found [here](https://medium.com/@SealedSaint/end-to-end-self-driving-car-using-behavioral-cloning-5cad2610522c).
+
 ## Why a Simulator
 
 While driving a car in a simulator is certainly not the same as driving a car in the real world, there are many similarities. Given the current state of game graphics, images captured in a simulated environment (road, markers, landscape) are a good approximation of images that could be captured in the real world.
